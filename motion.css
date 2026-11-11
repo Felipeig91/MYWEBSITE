@@ -5,6 +5,10 @@
   transform: none;
 }
 
+.hidden {
+  display: none !important;
+}
+
 .hero-copy,
 .hero-art,
 .hero-meta,

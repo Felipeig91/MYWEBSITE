@@ -93,9 +93,33 @@ if (document.readyState === "loading") {
   initMotion();
 }
 
-document.querySelector(".contact-form")?.addEventListener("submit", (event) => {
+document.querySelector(".contact-form")?.addEventListener("submit", async (event) => {
   event.preventDefault();
   const status = document.querySelector(".form-status");
-  status.textContent = "Thanks — I’ll be in touch shortly.";
-  event.currentTarget.reset();
+  const form = event.currentTarget;
+  const submitButton = form.querySelector('button[type="submit"]');
+
+  status.textContent = "Sending...";
+  submitButton.disabled = true;
+
+  try {
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: new FormData(form),
+      headers: { Accept: "application/json" }
+    });
+    const result = await response.json();
+
+    if (!response.ok || !result.success) {
+      throw new Error(result.message || "Unable to send the message.");
+    }
+
+    status.textContent = "Thanks — I’ll be in touch shortly.";
+    form.reset();
+  } catch (error) {
+    status.textContent = "Could not send your message. Please try again.";
+    console.error("Contact form submission failed:", error);
+  } finally {
+    submitButton.disabled = false;
+  }
 });
