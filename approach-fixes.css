@@ -16,11 +16,12 @@
   transform: translateX(-50%);
 }
 
-.item-two {
-  top: 50%;
+.spheres .item-two {
+  top: calc(50% - 44px) !important;
   right: -44px !important;
+  bottom: auto !important;
   left: auto !important;
-  transform: translateY(-50%);
+  transform: none !important;
 }
 
 .item-three {
@@ -33,11 +34,12 @@
   bottom: -44px;
 }
 
-.item-five {
-  top: 50%;
-  left: -44px !important;
+.spheres .item-five {
+  top: calc(50% - 44px) !important;
   right: auto !important;
-  transform: translateY(-50%);
+  bottom: auto !important;
+  left: -44px !important;
+  transform: none !important;
 }
 
 @media (max-width: 560px) {
@@ -45,7 +47,8 @@
     top: -34px;
   }
 
-  .item-two {
+  .spheres .item-two {
+    top: calc(50% - 34px) !important;
     right: -34px !important;
   }
 
@@ -59,7 +62,8 @@
     bottom: -34px;
   }
 
-  .item-five {
+  .spheres .item-five {
+    top: calc(50% - 34px) !important;
     left: -34px !important;
   }
 }
