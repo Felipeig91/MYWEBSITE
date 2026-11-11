@@ -1,16 +1,35 @@
+.orbit {
+  display: none;
+}
+
+.orbit-label {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(200, 241, 105, 0.55);
+  border-radius: 50%;
+  padding: 0;
+  text-align: center;
+}
+
 .label-top {
-  top: 35px;
-  right: 24px;
+  top: 20px;
+  left: 50%;
+  right: auto;
+  transform: translateX(-50%);
 }
 
 .label-right {
   top: 50%;
-  right: 0;
+  right: 8px;
   transform: translateY(-50%);
 }
 
 .label-bottom {
-  bottom: 25px;
+  bottom: 20px;
   left: 42px;
 }
 
@@ -20,17 +39,21 @@
     margin-inline: auto;
   }
 
+  .orbit-label {
+    width: 82px;
+    height: 82px;
+  }
+
   .label-top {
     top: 8px;
-    right: 12px;
   }
 
   .label-right {
-    right: -2px;
+    right: 0;
   }
 
   .label-bottom {
     bottom: 8px;
-    left: 12px;
+    left: 16px;
   }
 }
