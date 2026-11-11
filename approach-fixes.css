@@ -18,7 +18,8 @@
 
 .item-two {
   top: 50%;
-  right: -44px;
+  right: -44px !important;
+  left: auto !important;
   transform: translateY(-50%);
 }
 
@@ -34,7 +35,8 @@
 
 .item-five {
   top: 50%;
-  left: -44px;
+  left: -44px !important;
+  right: auto !important;
   transform: translateY(-50%);
 }
 
@@ -44,7 +46,7 @@
   }
 
   .item-two {
-    right: -34px;
+    right: -34px !important;
   }
 
   .item-three {
@@ -58,6 +60,6 @@
   }
 
   .item-five {
-    left: -34px;
+    left: -34px !important;
   }
 }
