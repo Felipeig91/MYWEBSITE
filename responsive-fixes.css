@@ -1,0 +1,36 @@
+.label-top {
+  top: 35px;
+  right: 24px;
+}
+
+.label-right {
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+
+.label-bottom {
+  bottom: 25px;
+  left: 42px;
+}
+
+@media (max-width: 560px) {
+  .hero-art {
+    max-width: 360px;
+    margin-inline: auto;
+  }
+
+  .label-top {
+    top: 8px;
+    right: 12px;
+  }
+
+  .label-right {
+    right: -2px;
+  }
+
+  .label-bottom {
+    bottom: 8px;
+    left: 12px;
+  }
+}
