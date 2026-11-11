@@ -1,0 +1,63 @@
+.spheres {
+  overflow: visible;
+}
+
+.sphere-center {
+  z-index: 2;
+}
+
+.sphere-item {
+  z-index: 3;
+}
+
+.item-one {
+  top: -44px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.item-two {
+  top: 50%;
+  right: -44px;
+  transform: translateY(-50%);
+}
+
+.item-three {
+  right: 12%;
+  bottom: -44px;
+}
+
+.item-four {
+  left: 12%;
+  bottom: -44px;
+}
+
+.item-five {
+  top: 50%;
+  left: -44px;
+  transform: translateY(-50%);
+}
+
+@media (max-width: 560px) {
+  .item-one {
+    top: -34px;
+  }
+
+  .item-two {
+    right: -34px;
+  }
+
+  .item-three {
+    right: 8%;
+    bottom: -34px;
+  }
+
+  .item-four {
+    left: 8%;
+    bottom: -34px;
+  }
+
+  .item-five {
+    left: -34px;
+  }
+}
