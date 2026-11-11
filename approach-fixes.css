@@ -1,69 +1,94 @@
 .spheres {
-  overflow: visible;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-areas:
+    "one two"
+    "center center"
+    "three four"
+    "five five";
+  gap: 16px;
+  width: 100%;
+  max-width: 560px;
+  height: auto;
+  margin-left: auto;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+
+.sphere {
+  position: static;
+  width: auto;
+  height: auto;
+  min-height: 104px;
+  transform: none !important;
+  border-radius: 8px;
 }
 
 .sphere-center {
-  z-index: 2;
+  grid-area: center;
+  min-height: 140px;
+  background: var(--lime);
+  color: var(--ink);
+  border: 0;
+  font-size: 24px;
 }
 
 .sphere-item {
-  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 18px;
+  border: 1px solid rgba(200, 241, 105, 0.5);
+  background: transparent;
+  text-align: left;
 }
 
 .item-one {
-  top: -44px;
-  left: 50%;
-  transform: translateX(-50%);
+  grid-area: one;
 }
 
-.spheres .item-two {
-  top: calc(50% - 44px) !important;
-  right: -44px !important;
-  bottom: auto !important;
-  left: auto !important;
-  transform: none !important;
+.item-two {
+  grid-area: two;
 }
 
 .item-three {
-  right: 12%;
-  bottom: -44px;
+  grid-area: three;
 }
 
 .item-four {
-  left: 12%;
-  bottom: -44px;
+  grid-area: four;
 }
 
-.spheres .item-five {
-  top: calc(50% - 44px) !important;
-  right: auto !important;
-  bottom: auto !important;
-  left: -44px !important;
-  transform: none !important;
+.item-five {
+  grid-area: five;
+}
+
+.sphere-item span {
+  font-size: 14px;
 }
 
 @media (max-width: 560px) {
-  .item-one {
-    top: -34px;
+  .spheres {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "center"
+      "one"
+      "two"
+      "three"
+      "four"
+      "five";
+    gap: 12px;
+    padding: 12px;
   }
 
-  .spheres .item-two {
-    top: calc(50% - 34px) !important;
-    right: -34px !important;
+  .sphere {
+    min-height: 88px;
   }
 
-  .item-three {
-    right: 8%;
-    bottom: -34px;
-  }
-
-  .item-four {
-    left: 8%;
-    bottom: -34px;
-  }
-
-  .spheres .item-five {
-    top: calc(50% - 34px) !important;
-    left: -34px !important;
+  .sphere-center {
+    min-height: 116px;
   }
 }
