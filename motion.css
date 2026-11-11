@@ -1,0 +1,50 @@
+.reveal {
+  will-change: transform, opacity;
+  transition: none;
+  opacity: 1;
+  transform: none;
+}
+
+.hero-copy,
+.hero-art,
+.hero-meta,
+.service-card,
+.section-heading,
+.about-visual,
+.about-copy,
+.approach-intro,
+.spheres,
+.quote-card,
+.contact-panel {
+  backface-visibility: hidden;
+}
+
+.hero {
+  min-height: max(580px, calc(100svh - 152px));
+}
+
+@media (max-width: 900px) {
+  .hero {
+    min-height: calc(100svh - 220px);
+    padding-top: 56px;
+    padding-bottom: 56px;
+  }
+}
+
+@media (max-width: 560px) {
+  .hero {
+    min-height: auto;
+    padding-top: 54px;
+    padding-bottom: 72px;
+  }
+
+  .trust-strip {
+    padding: 18px 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    will-change: auto;
+  }
+}
